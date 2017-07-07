@@ -10,7 +10,7 @@ class DiceSet
   def roll(num)    
     @values = []
     num.times do  |i|
-      @values << (1 + rand(6))
+      @values << (1 + rand(5))
     end
   end
 end
