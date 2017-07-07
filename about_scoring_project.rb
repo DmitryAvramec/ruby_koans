@@ -34,7 +34,13 @@ def score(dice)
   return sum if dice ==[]
   (1..6).each do |i|
     counter = dice.select { |n| n == i }
-    sum += (i == 1 ? 1000 : i * 100) if counter.size >= 3
+      if counter.size >= 3
+        if i == 1
+          sum += 1000
+        else
+          sum += i * 100
+        end
+      end
     sum += (counter.size % 3) * 100 if i == 1
     sum += (counter.size % 3) * 50 if i == 5
   end
