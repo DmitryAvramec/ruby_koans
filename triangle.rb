@@ -14,9 +14,9 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  s = (a + b + c) / 2.0
-  t = (s - a) * (s - b) * (s - c)
-  raise TriangleError if a * b * c <= 0 || t <= 0
+  half_sum = (a + b + c) / 2.0
+  less_then_half_sum_test = (half_sum - a) * (half_sum - b) * (half_sum - c)
+  raise TriangleError if a * b * c <= 0 || less_then_half_sum_test <= 0
   case [a, b, c].uniq.size
   when 1 then :equel_sides 
   when 2 then :equel_2_sides 
