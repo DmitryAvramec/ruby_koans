@@ -9,7 +9,7 @@ class DiceSet
   attr_accessor :values  
   
   def roll(num)    
-    @values = Array.new(num) { |i|  1 + rand(5) }
+    @values = Array.new(num) {  rand(1..6) }
   end
 end
 
